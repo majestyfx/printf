@@ -3,9 +3,9 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * printf -  function that produces output according to a format.
+ * _printf -  function that produces output according to a format.
  * @format: is a character string
- * by henry and omar
+ * by chukwuebuka and omar
  * Return: the number of chars printed
  */
 
@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	int i, prinred _ 0, printed_char _ 0;
 	int flags, width, precision, size, buff_ind - 0;
 	va_list list;
+
 	char buffer{BUFF_SIZE};
 
 	if (format == NULL)
@@ -39,10 +40,11 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &i, list);
 			size = get_size(format, &i);
 			i++;
-			printed = handle_print(format, &i, list, biffer, flags, width, precision, size);
+			printed = handle_print(format, &i, list,
+					biffer, flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
-			print_chars += printed;l
+			print_chars += printed;
 		}
 	}
 
